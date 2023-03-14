@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:LearningRustPL.Models"
+             x:Class="LearningRustPL.Views.PracticalPage">
+
+    <!--
+        Здесь определяется визуальная часть практик.
+    -->
+
+    <!--
+        Здесь определяется внешний вид Title практик.
+    -->
+    
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+
+            <Label Margin="50,0,-80,0" BackgroundColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Text="Глава" 
+                               TextColor="White" FontSize="30" FontAttributes="Bold"/>
+
+            <Label Margin="30,0,0,0" BackgroundColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Text="{Binding Cod_section}" 
+                               TextColor="White" FontSize="30" FontAttributes="Bold"/>
+
+            <Image Background="Black" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="0.90" Source="Logo.png" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--
+        Здесь определяется внешний вид контента практик. Так же частично он определяется в бекенде, в файле PracticalPage.xaml.cs
+    -->
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#343333">
+            <ScrollView>
+                <StackLayout x:Name="StackL" BackgroundColor="#343333">
+                    <Label x:Name="CP" Text="{Binding CodPractical}" IsVisible="False"/>
+                </StackLayout>
+            </ScrollView>
+            <Button BackgroundColor="Gray" TextColor="Orange" Text="Отправить!" Clicked="To_SendClicked" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

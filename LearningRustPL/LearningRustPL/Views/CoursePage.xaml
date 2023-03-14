@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningRustPL.Views.CoursePage">
+
+    <!--
+        Здесь определяется визуальная часть вкладки "Курс".
+    -->
+    
+    <!--
+        Здесь определяется внешний вид Title вкладки "Курс".
+    -->
+    
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label BackgroundColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Text="Курс" 
+                               TextColor="White" FontSize="41" FontAttributes="Bold"/>
+            <Image HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="0.90" Source="Logo.png" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--
+        Здесь определяется внешний вид контента вкладки "Курс".
+    -->
+
+    <ScrollView>
+        <StackLayout  BackgroundColor="#343333" Padding="20">
+            <Label Padding="0,0,0,10" Text="Информация о курсе" HorizontalTextAlignment="Center" TextColor="DarkGray" FontSize="21" />
+            <Label Text="В данном курсе предоставлена основная информация о языке Rust. Курс подойдет как новичкам, так и опытным программистам.&#10;&#10;Зачем изучать Rust?&#10;&#10;Rust - молодой, перспективный язык программирования. Его уже используют крупнейшие мировые компании. Остальные уже начали рассматривать его как замену языка C. Так как потенциал у языка большой, есть смысл начать его изучение. Так же язык подойдет всем, кто интересуется системным программированием, разработкой игр и приложений.&#10;&#10;Какие навыки получите?&#10;&#10;Вы познакомитесь с языком программирования Rust и его особенностями. Научитесь устанавливать Rust на разные ОС. Ознакомитесь с общими концепциями программирования. Обретете понимание владения. Научитесь обрабатывать ошибки. И изучите многое другое..." 
+                           HorizontalOptions="FillAndExpand" TextColor="DarkGray" FontSize="16"/>
+            <Button BackgroundColor="Gray" TextColor="AntiqueWhite" Margin="0,10,0,0" Text = "Изучать курс!" FontSize="Large" FontAttributes="Bold" Padding="25" BorderWidth="2" BorderColor="Black"
+                            HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="TableOfContents" BorderRadius ="35"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

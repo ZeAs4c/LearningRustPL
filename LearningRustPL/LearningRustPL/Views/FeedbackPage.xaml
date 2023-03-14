@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningRustPL.Views.FeedbackPage">
+
+    <!--
+        Здесь определяется визуальная часть вкладки "Оставить отзыв".
+    -->
+
+    <!--
+        Здесь определяется внешний вид Title вкладки "Оставить отзыв".
+    -->
+    
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center" 
+                               Text="Оставить отзыв" TextColor="White" FontSize="27" FontAttributes="Bold"/>
+            <Image HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="0.90" Source="Logo.png" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--
+        Здесь определяется внешний вид контента вкладки "Оставить отзыв".
+    -->
+
+    <ScrollView>
+        <StackLayout Padding="20"  BackgroundColor="#343333">
+            <Label HorizontalOptions="Center" VerticalOptions="Start" 
+                           Text="Вы можете оставить отзыв о приложении в Google Play Маркет, а также поставить ему от 1 до 5 звезд. Ваш отзыв и оценка приветствуются!"                                          
+                           HorizontalTextAlignment="Center" TextColor="DarkGray" FontSize="21" />
+
+            <Button BackgroundColor="Gray" TextColor="Orange" Margin="0,96,0,0" Text = "Оставить отзыв!" FontSize="Large" FontAttributes="Bold" Padding="25" BorderWidth="2" BorderColor="Black"
+                            HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                            Clicked="GiveFeedback" BorderRadius ="35"/>
+            <Image Margin="0,0,0,-96" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Scale="0.6" Source="Feetback.png" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

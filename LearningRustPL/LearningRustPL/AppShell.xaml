@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:LearningRustPL.Views"
+       Title="LearningRustPL"
+       x:Class="LearningRustPL.AppShell"
+       FlyoutWidth="200"
+       >
+
+    <!--
+        Здесь определяется общая визуальная иерархия приложения, а также навигация.
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="ShellContent" BasedOn="{StaticResource BaseStyle}"/>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+            <!-- 
+                Стили по умолчанию для всех всплывающих элементов
+            -->
+            
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"></Setter>
+            </Style>
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!--
+                Пользовательский стиль, который можно применить к любому элементу всплывающего окна
+            -->
+            
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- 
+        Когда всплывающее окно отображается, это определяет содержимое, которое будет отображаться во всплывающем окне.
+        FlyoutDisplayOptions="AsMultipleItems" создаст отдельный элемент flyout для каждого дочернего элемента
+    -->
+    
+    <!-- 
+        Настройка внешнего вида Heder(Шапки) в "Меню".
+    -->
+    
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Black" HeightRequest="76">
+                <Image HorizontalOptions="StartAndExpand" VerticalOptions="Center" Scale="0.90" Source="LogoMenu.png" />
+                <Label Text="Меню" FontSize="35" TextColor="White" HorizontalOptions="End" VerticalTextAlignment="Center" Margin="0,0,25,0"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    
+    <!-- 
+        Настройка внешнего вида Footer в "Меню".
+    -->
+    
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="White" HeightRequest="230">
+                <Image HorizontalOptions="Center" VerticalOptions="End" Scale="0.90" Source="Footer.png" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+
+    <!-- 
+        Настройка внешнего вида и функциональности контента в "Меню".
+    -->
+    
+    <FlyoutItem Title="ГЛАВНАЯ" Icon="LogoMain.png">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="КУРС" Icon="LogoCourse.png">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:CoursePage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Оглавление" Icon="ListLogo.png">
+        <ShellContent Route="TablСontPage" ContentTemplate="{DataTemplate local:TablСontPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Прогресс" Icon="LogoProgresst.png">
+        <ShellContent Route="ProgressPage" ContentTemplate="{DataTemplate local:ProgressPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="О приложении" Icon="LogoAbouApp.png">
+        <ShellContent Route="AbouAppPage" ContentTemplate="{DataTemplate local:AbouAppPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Оставить отзыв" Icon="LogoFeedback.png">
+        <ShellContent Route="FeedbackPage" ContentTemplate="{DataTemplate local:FeedbackPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Помощь" Icon="LogoHelp.png">
+        <ShellContent Route="HelpPage" ContentTemplate="{DataTemplate local:HelpPage}" />
+    </FlyoutItem>
+
+</Shell>

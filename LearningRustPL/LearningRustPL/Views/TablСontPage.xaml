@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningRustPL.Views.TablСontPage">
+    <!--
+        Здесь определяется визуальная часть вкладки "Оглавление".
+    -->
+
+    <!--
+        Здесь определяется внешний вид Title вкладки "Оглавление".
+    -->
+    
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label BackgroundColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Text="Оглавление" 
+                               TextColor="White" FontSize="30" FontAttributes="Bold"/>
+            <Image HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="0.90" Source="Logo.png" />
+        </StackLayout>
+    </Shell.TitleView>
+    
+    <!--
+        Здесь определяется внешний вид контента вкладки "Оглавление".
+    -->
+
+    <ScrollView>
+        <StackLayout Padding="20" BackgroundColor="#343333" Orientation="Vertical">
+            <ListView x:Name="LecturList" SeparatorColor="WhiteSmoke" ItemsSource="{Binding}" ItemSelected="OnItemSelected" >
+
+                <!--
+                    Здесь определяется внешний вид Header лекций во вкладке "Оглавление".
+                -->
+
+                <ListView.Header>
+                    <Frame BackgroundColor="Gray" BorderColor="Orange">
+                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  TextColor="Orange" Text="Лекции" FontSize="30" FontAttributes="Bold" />
+                    </Frame>
+                </ListView.Header>
+
+                <!--
+                    Здесь определяется внешний вид контента лекций во вкладке "Оглавление".
+                -->
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout BackgroundColor="Gray" Orientation="Horizontal">
+                                    <Label Margin="20,10,0,0" TextColor="LightGray" Text="{Binding  Lecture_title}" FontSize="16" />
+                                    <Image  HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="1.0" Source="OkLogo" IsVisible="{Binding Lecture_completion}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <ListView x:Name="PracticalList" SeparatorColor="WhiteSmoke" ItemsSource="{Binding}" ItemSelected="OnItemSelected2" >
+
+                <!--
+                    Здесь определяется внешний вид Header практик во вкладке "Оглавление".
+                -->
+
+                <ListView.Header>
+                    <Frame BackgroundColor="Gray" BorderColor="Orange">
+                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  TextColor="Orange" Text="Тесты" FontSize="30" FontAttributes="Bold" />
+                    </Frame>
+                </ListView.Header>
+
+                <!--
+                    Здесь определяется внешний вид контента практик во вкладке "Оглавление".
+                -->
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout BackgroundColor="Gray" Orientation="Horizontal">
+                                    <Label Margin="20,10,0,0" TextColor="LightGray" Text="{Binding  Practice_name}" FontSize="16" />
+                                    <Image  HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="1.0" Source="OkLogo" IsVisible="{Binding  Complete_practice}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--
+                    Здесь определяется внешний вид Footer во вкладке "Оглавление".
+            -->
+            
+            <Image Margin="0,-250,0,0" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="1.45" Source="FooterTablContRust.png" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningRustPL.Views.HelpPage">
+
+    <!--
+        Здесь определяется визуальная часть вкладки "Помощь".
+    -->
+
+    <!--
+        Здесь определяется внешний вид Title вкладки "Помощь".
+    -->
+    
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label BackgroundColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="Center" 
+                               Text="Помощь" TextColor="White" FontSize="35" FontAttributes="Bold"/>
+            <Image HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="0.90" Source="Logo.png" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--
+        Здесь определяется внешний вид контента вкладки "Помощь".
+    -->
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical"  BackgroundColor="#343333" Padding="20">
+            <Label HorizontalOptions="Center" VerticalOptions="Start" 
+                           Text="Обратиться за помощью или с предложением вы можете по адресу электронной почты:" 
+                           HorizontalTextAlignment="Center" TextColor="DarkGray" FontSize="21" />
+            <Label HorizontalOptions="Center" VerticalOptions="StartAndExpand" Text="alexeyzaleskevich@gmail.com" 
+                           HorizontalTextAlignment="Center" TextColor="DarkGray" FontSize="21" FontAttributes="Bold"/>
+            <Image Margin="0,0,0,-32" Scale="0.5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Source="LogoEmail.png" />
+            <Image Margin="0,0,0,-20" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Scale="1.0" Source="Email.png" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

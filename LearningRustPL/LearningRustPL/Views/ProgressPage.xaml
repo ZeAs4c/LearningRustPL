@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningRustPL.Views.ProgressPage">
+
+    <!--
+        Здесь определяется визуальная часть вкладки "Прогресс".
+    -->
+
+    <!--
+        Здесь определяется внешний вид Title вкладки "Прогресс".
+    -->
+    
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label BackgroundColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Text="Прогресс" 
+                               TextColor="White" FontSize="35" FontAttributes="Bold"/>
+            <Image  HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="0.90" Source="Logo.png" />
+        </StackLayout>
+     </Shell.TitleView>
+
+    <!--
+        Здесь определяется внешний вид контента вкладки "Прогресс". Так же частично он определяется в бекенде, в файле ProgressPage.xaml.cs
+    -->
+
+    <StackLayout  BackgroundColor="#343333">
+        <StackLayout>
+            <Label Text="Прогресс прохождения курса" TextColor="White" FontSize="26" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <ProgressBar x:Name="ProgBar" IsVisible="false" ScaleY="2"/>
+            <Label Margin="65,90,0,0" x:Name="Proc" Text="50%" TextColor="Orange" FontSize="55" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
+            <Image Margin="0,-150,0,0" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="1.0" Source="PercentProg.png" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

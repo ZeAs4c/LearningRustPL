@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningRustPL.Views.AboutPage">
+    <!--
+        Здесь определяется визуальная часть вкладки "Главная".
+    -->
+    
+    <!--
+        Здесь определяется внешний вид Title вкладки "Главная".
+    -->
+    
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label BackgroundColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Text="Главная"
+                           TextColor="White" FontSize="40" FontAttributes="Bold"/>
+            <Image HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="0.90" Source="Logo.png" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--
+        Здесь определяется внешний вид контента вкладки "Главная".
+    -->
+    
+    <ScrollView>
+        <StackLayout BackgroundColor="#343333">
+            <Label  Text="Основная информация о языке" HorizontalTextAlignment="Center" TextColor="DarkGray" 
+                                FontSize="21" FontAttributes="None" Padding="20,10,20,5"/>
+            <Label  TextColor="DarkGray"   
+            Text="Rust – современный язык программирования, разрабатываемый компанией Mozilla, позиционируется как альтернатива С/С++, что уже само по себе интересно, так как даже претендентов на конкуренцию не так уж и много. Язык нацелен на безопасность, скорость и параллелизм. Данные цели выполняются при условии безопасной работы с памятью без использования сборщика мусора. Чтобы убедиться, что Rust – язык, который точно заслуживает внимания, посмотрим тесты скорости Rust, C, C#. Чем меньше количество секунд, тем быстрее язык справился с поставленной задачей." 
+            FontSize="16" Padding="20,10,20,10"/>
+            <Image Scale="0.90" Source="TestRustSpeed.png" />
+            <Label  TextColor="DarkGray"   
+            Text="Видно, что с некоторыми задачами Rust справился быстрее чем С, а в некоторых был довольно близок. Но оба они идут с заметным отрывом от С#..." 
+            FontSize="16" Padding="20,10,20,10"/>
+            <Image Scale="0.90" Source="HeaderRust.png" />
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

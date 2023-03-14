@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cc61e91f-a4ad-4444-b2ca-79f60b7c4fbf": {
+      "ProjectGuid": "cc61e91f-a4ad-4444-b2ca-79f60b7c4fbf",
+      "DisplayName": "LearningRustPL.Android",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

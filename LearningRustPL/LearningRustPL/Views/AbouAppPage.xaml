@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningRustPL.Views.AbouAppPage">
+
+    <!--
+        Здесь определяется визуальная часть вкладки "О приложении".
+    -->
+
+    <!--
+        Здесь определяется внешний вид Title вкладки "О приложении".
+    -->
+    
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center" Text="О приложении" 
+                               TextColor="White" FontSize="30" FontAttributes="Bold"/>
+            <Image HorizontalOptions="EndAndExpand" VerticalOptions="Center" Scale="0.90" Source="Logo.png" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--
+        Здесь определяется внешний вид контента вкладки "О приложении".
+    -->
+    
+    <ScrollView>
+        <StackLayout Orientation="Vertical" BackgroundColor="#343333" Padding="20">
+            <Label HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                           Text="Продукт нацелен на аудиторию, которая желает изучить основы языка Rust, а также и на людей, использующих этот язык в своей деятельности, чтобы вспомнить основы. То есть, ориентирован на новичков, школьников, студентов, программистов.&#10;&#10;Прежде всего, приложение обучает основам языка Rust, следовательно, выдает теорию. Теория структурирована и разделена на пункты по возрастанию сложности и увеличению информации, которой должен обладать пользователь, когда подходит к изучению определенного пункта. После каждого пункта идут практические задания для лучшего усвоения материала.&#10;&#10;Практические задания включают в себя тесты или ввод команд, а также текста, которого не хватает в предоставленном блоке кода на языке Rust.&#10;&#10;Также учитывается прогресс пользователя по изучению языка. Приложение запоминает, где остановился в изучении пользователь.&#10;&#10;Ну и самое главное - приложение будет расширятся и обновляться, как по мере изменения самого языка Rust, так и при добавлении новых функций в приложение.&#10;&#10;Приложение облегчит жизнь русскоговорящим пользователям, которые либо говорят на английском плохо, либо не говорят вообще. Так как материала по изучению языка Rust на русском языке не много, то приложение, в данном случае, является хорошей альтернативой изучения основ языка." 
+                           TextColor="DarkGray" FontSize="16"/>
+            <Image Margin="0,20,0,-21" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Scale="1.3" Source="AboutTheApp.png" />
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>
